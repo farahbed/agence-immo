@@ -1,1 +1,2 @@
 # agence-immo
+source ~/.bashrc
