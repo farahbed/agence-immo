@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 
 function Carouselle({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // pour utiliser state dans le carouselle
 
   // Fonction pour aller à l'image précédente
   const previousSlide = () => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex((prevIndex) =>   //pour aller à l'image precedente
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   // Fonction pour aller à l'image suivante
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex((prevIndex) =>  //pour aller à l'image suivante
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  // Afficher les boutons seulement si plus d'une image
-  const showNavigation = images.length > 1;
+ 
+  const showNavigation = images.length > 1;  //pour afficher les boutons seulement si plus d'une image  
 
   return (
     <div className="carouselle">
-      {showNavigation && (
+      {showNavigation && (  
         <button onClick={previousSlide} className="carouselle-button prev">❮</button>
       )}
       <img

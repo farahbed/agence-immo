@@ -1,6 +1,6 @@
 import React from 'react'
 import './Cards.scss'
-import Carouselle from '../../carouselle'
+
 
 
 function Cards(props) {
@@ -11,7 +11,7 @@ function Cards(props) {
     <figure>
         <img className="card-img"
         src={props.cover} 
-        alt="logement"/> 
+        alt="{props.title}"/> 
         
             <h2 className="card-title">{props.title}</h2>
     </figure>

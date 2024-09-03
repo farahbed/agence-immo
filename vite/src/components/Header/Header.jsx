@@ -6,9 +6,9 @@ import "./Header.scss"
 function Header() {
   return (
     <header>
-        <img className="logo" src={logo} alt="logo" />
+        <h1><img className="logo" src={logo} alt="logo" /></h1>
       <nav>
-        <a className="accueilBtn" href="../Home#">Accueil</a>
+        <a className="accueilBtn" href="../">Accueil</a>
         <a className="aproposBtn" href="../About#">A propos</a>
       </nav>
     </header>
