@@ -1,15 +1,18 @@
 import React from "react"
 import logo from "./LOGO.png"
 import "./Header.scss"
+import { Link } from "react-router-dom"
 
 
 function Header() {
   return (
     <header>
         <h1><img className="logo" src={logo} alt="logo" /></h1>
+     
       <nav>
-        <a className="accueilBtn" href="../">Accueil</a>
-        <a className="aproposBtn" href="../About#">A propos</a>
+        <Link className="accueilBtn" to="/">Accueil</Link>
+        <Link  className="aproposBtn" to="/about">A propos</Link>
+
       </nav>
     </header>
   );

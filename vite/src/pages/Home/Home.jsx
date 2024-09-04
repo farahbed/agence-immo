@@ -1,12 +1,14 @@
 import React from 'react';
-import Banner from '../../components/Banner/Banner.jsx';
-import Cards from '../../components/Card/Cards.jsx';
+import Banner from '../../components/Banner/Banner';
+import Cards from '../../components/Card/Cards';
 import backData from '../../data/back-data.json';
 import homeImage from '../../assets/home-image.png';
 import '../../components/Banner/Banner.scss';
 
 function Home() {
   console.log('homeImage:', homeImage);  
+
+  
 
   return (
     <div className="home-page">
