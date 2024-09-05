@@ -1,46 +1,47 @@
-//Cards
-
-
-
+* {
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+}
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espace entre les cartes */
-    justify-content: center; /* Centrer les cartes dans le conteneur */
-    background-color: #F6F6F6;
-    width: 100%;
-    border-radius: 25px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .card {
-   
-    width: 340px; /* Chaque carte occupe environ 45% de la largeur disponible */
-    height: 340px;
-    position: relative;
-    margin-bottom: 20px; /* Espace en bas de chaque carte */
-    display: flex;
+  width: 80%; /* Garde la même largeur que la bannière */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes sur les grands écrans */
+  margin: auto;
+  border-radius: 25px;
+  background: #f6f6f6;
+  padding: 30px;
+  gap: 20px; /* Ajoute de l'espace entre les cartes */
+}
 
-  
-    &-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-  
-    .card-title {
-      position: absolute;
-      bottom: 10px;
-      left: 45px;
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      max-width: 200px; /* Limite la largeur du texte pour forcer le retour à la ligne */
-      
-     
-    }
+.cards-container a {
+  width: fit-content;
+}
+
+.card {
+  position: relative;
+
+  &-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 425px;
+    object-fit: cover;
   }
-  
+
+  .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 45px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 200px; /* Limite la largeur du texte pour forcer le retour à la ligne */
+  }
+}
+
+/* Media Query pour les écrans petits (mobiles) */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
+  }
+}

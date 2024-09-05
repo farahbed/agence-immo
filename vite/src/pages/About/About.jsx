@@ -2,7 +2,7 @@
 import React from 'react';
 import Banner from '../../components/Banner/Banner.jsx';
 import aboutImage from '../../assets/about-image.png';
-import Collapse from '../../components/collapse/Collapse.jsx';
+import Collapse from '../../components/Collapse/Collapse.jsx';
 
 function About() {
   return (

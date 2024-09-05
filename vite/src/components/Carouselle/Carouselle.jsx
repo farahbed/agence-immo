@@ -1,46 +1,67 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import './Carouselle.scss';
+import leftArrow from './left-arrow.png';
+import rightArrow from './right-arrow.png';
 
 function Carouselle({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState("");
+  const [singleImage, setSingleImage] = useState(false);
 
-  const previousSlide = () => {
-    setCurrentIndex((prevIndex) =>
+  // Préchargement des images au chargement du composant
+  useEffect(() => {
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+    // Vérifier si le logement a une seule image
+    if (images.length === 1) {
+      setSingleImage(true);
+    } else {
+      setSingleImage(false);
+    }
+  }, [images]);
+
+  const handleClickLeft = () => {
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+    setSlideDirection("slide-left"); // Appliquer la classe pour le glissement vers la gauche
+    setTimeout(() => setSlideDirection(""), 200); // Réinitialiser la classe après un court délai (300ms)
   };
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
+  const handleClickRight = () => {
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+    setSlideDirection("slide-right"); // Appliquer la classe pour le glissement vers la droite
+    setTimeout(() => setSlideDirection(""), 200); // Réinitialiser la classe après un court délai (300ms)
   };
-
-  const showNavigation = images.length > 1;
 
   return (
     <div className="carouselle">
-      {showNavigation && (
-        <button onClick={previousSlide} className="carouselle-button prev">❮</button>
-      )}
       <img
-        className="carouselle-img"
-        src={images[currentIndex]}
-        alt={`slide ${currentIndex + 1}`}
+        src={images[currentImageIndex]}
+        alt={`Image ${currentImageIndex + 1}`}
+        className={`carouselle-image ${slideDirection}`}
       />
-      {showNavigation && (
-        <button onClick={nextSlide} className="carouselle-button next">❯</button>
+      {!singleImage && (
+        <>
+          <div className="arrow left-arrow" onClick={handleClickLeft}>
+            <img src={leftArrow} alt="Left arrow" />
+          </div>
+          <div className="arrow right-arrow" onClick={handleClickRight}>
+            <img src={rightArrow} alt="Right arrow" />
+          </div>
+        </>
       )}
-      <div className="carouselle-counter">
-        {currentIndex + 1} / {images.length}
-      </div>
+      {!singleImage && (
+        <div className="image-number">
+          {currentImageIndex + 1} / {images.length}
+        </div>
+      )}
     </div>
   );
 }
-
-Carouselle.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default Carouselle;

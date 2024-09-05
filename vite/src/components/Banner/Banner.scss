@@ -1,23 +1,55 @@
-.banner {
+* {
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+}
 
-    margin-top: 20px;
-  
-    .banner-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-     
-    }
-  
-    .banner-text {
-      position: absolute;
-      top: 30%;
-      left: 35%;
-      color: white;
-      font-size: 48px;
-     
-    }
-  
+.banner {
+  width: 80%; /* Largeur par défaut pour les grands écrans */
+  max-width: 1240px; /* Largeur maximale */
+  margin: 20px auto; /* Centre horizontalement avec une marge */
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden; /* Pour que le texte ne dépasse pas */
+}
+
+.banner-img {
+  width: 100%;
+  height: 223px; /* Hauteur fixe de la bannière */
+  object-fit: cover; /* L'image couvre la bannière */
+  opacity: 0.6; /* Opacité de l'image */
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 48px;
+  text-align: center;
+  width: 100%; 
+  padding: 0 20px; 
+  box-sizing: border-box; 
+  color: white;
+
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+  .banner {
+    width: 100%; /* La bannière occupe toute la largeur de l'écran */
+    margin: 10px 0; /* Réduit les marges pour les petits écrans */
   }
-  
+
+  .banner-img {
+    height: 150px; /* Ajuste la hauteur pour les petits écrans */
+  }
+
+  .banner-text {
+    font-size: 24px; /* Réduit la taille du texte pour les petits écrans */
+    padding: 0 10px; /* Réduit l'espace autour du texte */
+  }
+}
+
+
+
+

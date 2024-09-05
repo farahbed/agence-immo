@@ -1,0 +1,127 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  list-style: none;}
+  
+  .lodging-page {
+    max-width: 1240px;
+    padding: 0px 20px;
+    margin: 0 auto;
+  
+    .cover-image {
+      object-fit: cover;
+      border-radius: 25px;
+      height: 415px;
+      width: 100%;
+    }
+  
+    .all-infos {
+      display: flex;
+      justify-content: space-between;
+  
+      @media screen and (max-width: 769px) {
+        
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      .first-case {
+        margin: 20px 0;
+  
+        h2 {
+          color: rgb(255, 100, 100);
+          font-size: 1.7rem;
+          font-weight: 500;
+        }
+  
+        p {
+          padding: 5px 0 20px;
+          font-weight: 600;
+        }
+  
+        ul {
+          display: flex;
+
+          display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      gap: 10px;  
+        }
+  
+        li {
+          font-size: 0.8rem;
+          color: white;
+          background-color: rgb(255, 100, 100);
+          padding: 5px 10px;
+          margin-right: 10px;
+          border-radius: 10px;
+
+         
+        border-radius: 10px;
+        padding: 4px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+
+        @media (max-width: 769px){
+          font-size: 10px;
+        }
+      }
+    }
+  
+      .second-case {
+        margin: 20px 0 0;
+        display: block;
+
+        @media screen and (max-width: 769px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        .host {
+          p {
+            color: rgb(255, 100, 100);
+          }
+  
+          .host-image {
+            border-radius: 50%;
+            width: 70px;
+            margin: 0 0 15px 10px;
+          }
+  
+          .headinfos {
+            display: flex;
+            align-items: center;
+          }
+        }
+  
+        .rate {
+          .rating {
+            display: flex; /* Utilise flexbox pour aligner les étoiles horizontalement */
+            align-items: center; /* Aligne verticalement les étoiles */
+            gap: 5px; /* Espace entre les étoiles */
+          }
+        
+          img {
+            width: 25px; /* Taille des étoiles */
+            margin-left: 10px;
+          }
+           
+        }
+        
+      }
+    }
+  
+     .col-container{
+       
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+    
+      @media (max-width:1024px){
+        grid-template-columns: 1fr;
+      }
+    }
+  }

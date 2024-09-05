@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import Cards from '../../components/Card/Cards';
 import backData from '../../data/back-data.json';
@@ -17,12 +18,12 @@ function Home() {
         text="Chez vous, partout et ailleurs"
       />
       <div className="cards-container">
-        {backData.map((props) => (
-          <Cards
-            key={props.id}
-            title={props.title}
-            cover={props.cover}
-          />
+        {backData.map((property) => (
+          <Link key={property.id} to={`/lodging/${property.id}`} >
+            <Cards
+              title={property.title}
+              cover={property.cover} />
+          </Link>
         ))}
       </div>
     </div>
