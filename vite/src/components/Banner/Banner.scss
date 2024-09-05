@@ -4,19 +4,19 @@
 }
 
 .banner {
-  width: 80%; /* Largeur par défaut pour les grands écrans */
-  max-width: 1240px; /* Largeur maximale */
-  margin: 20px auto; /* Centre horizontalement avec une marge */
+  width: 80%; 
+  max-width: 1240px;
+  margin: 20px auto; 
   position: relative;
   border-radius: 25px;
-  overflow: hidden; /* Pour que le texte ne dépasse pas */
+  overflow: hidden; 
 }
 
 .banner-img {
   width: 100%;
-  height: 223px; /* Hauteur fixe de la bannière */
-  object-fit: cover; /* L'image couvre la bannière */
-  opacity: 0.6; /* Opacité de l'image */
+  height: 223px; 
+  object-fit: cover; 
+  opacity: 0.6; 
 }
 
 .banner-text {
@@ -36,17 +36,19 @@
 /* Media Query pour les petits écrans */
 @media (max-width: 768px) {
   .banner {
-    width: 100%; /* La bannière occupe toute la largeur de l'écran */
-    margin: 10px 0; /* Réduit les marges pour les petits écrans */
+    margin: 10px auto;
+    width: 100%; 
+    margin: 10px 0; 
   }
 
   .banner-img {
-    height: 150px; /* Ajuste la hauteur pour les petits écrans */
+    height: 150px; 
+    margin: 10px auto;
   }
 
   .banner-text {
-    font-size: 24px; /* Réduit la taille du texte pour les petits écrans */
-    padding: 0 10px; /* Réduit l'espace autour du texte */
+    font-size: 24px; 
+    padding: 0 10px; 
   }
 }
 

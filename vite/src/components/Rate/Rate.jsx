@@ -9,8 +9,8 @@ function Rate({ rating }) {
 
     // Boucle pour créer les étoiles
     for (let i = 1; i <= maxStars; i++) {
-      // Utiliser l'image d'étoile remplie si l'indice est inférieur ou égal au rating
-      // Sinon, utiliser l'image d'étoile inactive
+    
+
       const starSrc = i <= rating ? starFilled : starEmpty;
 
       stars.push(<img key={i} src={starSrc} alt="Star" />);
@@ -22,7 +22,7 @@ function Rate({ rating }) {
   return (
     <div className="rate">
       <div className="rating">{renderStars(rating)}</div>
-      {/* Autres éléments de la card */}
+      
     </div>
   );
 }

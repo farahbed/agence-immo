@@ -99,13 +99,11 @@
   
         .rate {
           .rating {
-            display: flex; /* Utilise flexbox pour aligner les étoiles horizontalement */
-            align-items: center; /* Aligne verticalement les étoiles */
-            gap: 5px; /* Espace entre les étoiles */
-          }
+            display: flex; 
+            align-items: center; 
         
           img {
-            width: 25px; /* Taille des étoiles */
+            width: 25px; 
             margin-left: 10px;
           }
            
@@ -125,3 +123,5 @@
       }
     }
   }
+
+}
