@@ -1,6 +1,7 @@
 // src/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './styles/App.scss';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 

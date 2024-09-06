@@ -1,40 +1,58 @@
 header {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 90%; // Réduit la largeur pour moins de marge à gauche et à droite
+  max-width: 1240px; // Largeur maximale pour grands écrans
   justify-content: space-between;
-  margin: 10px auto;
+  margin: 10px auto; // Centre horizontalement avec espacement vertical
 
-  
+  .logo {
+    margin-right: 20px; // Espace entre le logo et les boutons
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto; // Pousse les boutons de navigation vers la droite
+  }
 
   .accueilBtn,
   .aproposBtn {
     color: black;
     text-decoration: none;
     padding: 15px;
-  
+    margin: 0 5px; // Espace entre les boutons
+
     &:hover {
-      border-bottom: 2px solid black;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
     }
   }
+}
+
 
   /* Styles pour les écrans de taille inférieure à 769px */
   @media screen and (max-width: 768px) {
     header {
-      margin: 5px auto;
+      
+    
+    flex-direction: row; // Conserve l'alignement horizontal
+    justify-content: space-between; 
+    width: 100%;
+    margin: 10px 0;
     }
 
     .logo {
-    margin-right: 10px;
-    margin-left: 0;
-    }
-    nav a {
-      display: flex;
-      justify-content: center;
-      gap: 10px; 
-      text-transform: uppercase;
+      margin-right: 10px;
+      
     }
 
-    
+    nav {
+      display: flex;
+      gap: 10px; // Espace entre les boutons
+      margin-left: auto; // Assure que la nav est poussée à droite
+      text-transform: uppercase;
+    }
   }
-}
+
