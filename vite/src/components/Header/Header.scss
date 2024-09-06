@@ -2,7 +2,7 @@ header {
   display: flex;
   align-items: center;
   width: 80%; 
-  max-width: 1240px; 
+  
   justify-content: space-between;
   margin: 10px auto; 
 
@@ -11,6 +11,8 @@ header {
     display: flex;
     align-items: center;
     margin-left: auto; 
+    width: 210px;
+    height: auto;
   }
 
   .accueilBtn,
@@ -35,10 +37,14 @@ header {
   width: 90%;
     .logo {
       margin-right: 10px;
+      width: 150px;
       
     }
 
-    nav {
+    
+
+    .accueilBtn,
+    .aproposBtn {
      
       text-transform: uppercase;
     }
