@@ -65,6 +65,7 @@ function Lodging () {
         </div>
         
 
+    </div>
         <div className="col-container">
             <div className="description">
                 <Description lodgingId={id} />{" "}
@@ -75,7 +76,6 @@ function Lodging () {
                 <Equipement lodgingId={id} data={backData} />
             </div>
         </div>
-    </div>
 </div>
   );
 }

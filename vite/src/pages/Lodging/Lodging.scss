@@ -1,6 +1,5 @@
 .lodging-page {
-  width: 90%;
-  padding: 0px 20px;
+  
   margin: 0 auto;
 
   .cover-image {
@@ -11,16 +10,20 @@
   }
 
   .all-infos {
-    margin-left: 50px;
-    margin-right: 50px;
+   
+    justify-content: space-between;
+    display: flex;
+    margin-left: 8%;
+    margin-right: 8%;
 
     @media screen and (max-width: 769px) {
       margin: 0;
+      display: block;
     }
   }
 
   .first-case {
-    margin: 20px 0;
+    margin: 20px 20px;
 
     h2 {
       color: rgb(255, 100, 100);
@@ -35,38 +38,54 @@
 
     ul {
       display: flex;
-       
+      flex-wrap: nowrap; /* Ajouté pour permettre un retour à la ligne */
+      gap: 10px; /* Espacement entre les éléments */
+      margin-top: 10px;
+
+      @media (max-width: 769px) {
+        width: 100%;
+        justify-content: flex-start;
+      }
     }
 
     li {
-      font-size: 0.8rem;
+     
       color: white;
       background-color: rgb(255, 100, 100);
-      padding: 5px 10px;
-      margin-right: 10px;
       border-radius: 10px;
-      text-align: center;
-
-      border-radius: 10px;
-      padding: 4px 40px;
       display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 14px;
       font-weight: 700;
+      padding: 3px 10px;
+      align-items: center;
+      height: 25px;
 
       @media (max-width: 769px) {
         font-size: 10px;
+        padding: 4px 20px; /* Réduire le padding pour le responsive */
+        margin-right: 10px; /* S'assure que les éléments ne se touchent pas */
+        width: calc(20% - 45px);
+        justify-content: center;
+        align-items: center;
+        
       }
     }
-  }
+  } /* Il manquait cette accolade fermante ici */
 
   .second-case {
-    margin: 20px 0 0;
+    margin: 20px 30px;
     display: flex;
     flex-direction: column-reverse; // Alignement en colonne
     align-items: flex-end; // Aligne les éléments à droite
     gap: 20px; // Espacement entre host et rating
+
+    @media (max-width: 769px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+      margin-right: 20px;
+    }
 
     .host {
       display: flex;
@@ -74,17 +93,27 @@
 
       p {
         color: rgb(255, 100, 100);
+        align-items: center;
+        display: flex;
+        padding-right: 10px;
+        font-size: 18px;
+
+        @media (max-width: 769px) {
+          display: flex;
+          align-items: center;
+        }
+        
       }
 
       .host-image {
         border-radius: 50%;
         width: 70px;
-        margin: 0 0 15px 10px;
+        
       }
 
       .headinfos {
         display: flex;
-        flex-direction: column; // Assure que le nom du host est sous la photo
+        flex-direction: row;
       }
     }
 
@@ -93,8 +122,11 @@
         display: flex;
         align-items: center;
 
-        img {
+        .star-inactive {
+          
+        
           width: 25px;
+          height: auto;
           margin-left: 10px;
         }
       }
@@ -105,26 +137,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
-    margin-top: 20px; // Ajoute une marge en haut
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
 
-    @media (max-width: 1024px) {
+    @media screen and (max-width: 769px) {
       grid-template-columns: 1fr;
     }
   }
-
-  @media (max-width: 769px) {
-    .first-case {
-      width: calc(83% - 20px); // Largeur du titre alignée avec le carrousel
-      margin-left: 20px;
-    }
-
-    .second-case {
-      display: flex;
-      flex-direction: row;
-      align-items: center; // Centre les éléments en colonne
-      gap: 10px; // Espacement entre host et rating
-      justify-content: space-between;
-      margin-right: 20px;
-    }
-  }
 }
+
