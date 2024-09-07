@@ -1,17 +1,18 @@
 * {
-    
-  body {
-    margin: 0;
-  }
-    font-family: "Montserrat", sans-serif;
-   
-  }
-  
-  #root {
-    background-color: white;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .home-page {
-margin: 0;
-  }
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
 
+#root {
+  background-color: white;
+}
+
+.home-page {
+  margin: 0;
+}

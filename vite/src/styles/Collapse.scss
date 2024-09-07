@@ -1,6 +1,7 @@
 .collapse {
-  max-width: 1240px;
+  width: 70%;
   margin: 35px auto;
+  padding: 0 20px; 
 
   .collapse-header {
     display: flex;
@@ -26,6 +27,15 @@
     background-color: rgba(238, 238, 238, 0.547);
     overflow: hidden;
     transition: max-height 0.2s ease;
-   
   }
 }
+
+@media screen and (max-width: 768px) {
+  .collapse { //pour etre à la meme largeur le la Banner
+  width: calc(100% - 30px); 
+  margin: 10px auto;
+  padding: 0 15px;
+}
+
+}
+

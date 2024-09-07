@@ -1,9 +1,10 @@
 .carouselle {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 415px;
   border-radius: 15px;
-  overflow: hidden; /* Assurez-vous que les flèches ne débordent pas du carrousel */
+  margin: 0 auto; 
+  overflow: hidden; 
 
   .image-number {
     position: absolute;
@@ -16,11 +17,12 @@
     border-radius: 5px;
     font-size: 14px;
   }
+
   .carouselle-image {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease; /* Ajoutez une transition pour l'animation */
+    transition: transform 0.5s ease; 
   }
 
   .arrow {
@@ -30,10 +32,11 @@
     cursor: pointer;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 80px;
+      height: 100px;
     }
   }
+  
   .left-arrow {
     left: 10px; /* Ajustez la position de la flèche gauche */
   }
@@ -43,15 +46,15 @@
   }
 }
 
-.slide-right {
-  transform: translateX(-1%); /* Déplacez l'image vers la droite */
-}
-
-.slide-left {
-  transform: translateX(1%); /* Déplacez l'image vers la gauche */
-}
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .carouselle {
+    width: calc(100% - 30px);
     height: 315px;
   }
+
+  .arrow img {
+    width: 28px !important;  /* Réduction de la taille des flèches en responsive */
+    height: 33px !important;
+  }
 }
+
