@@ -1,5 +1,5 @@
 .lodging-page {
-  max-width: 1240px;
+  width: 90%;
   padding: 0px 20px;
   margin: 0 auto;
 
@@ -11,47 +11,42 @@
   }
 
   .all-infos {
-   
-  margin-left: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 
     @media screen and (max-width: 769px) {
-      
-      flex-direction: column;
-      align-items: center;
-      
+      margin: 0;
     }
-    .first-case {
-      margin: 20px 0;
+  }
 
-      h2 {
-        color: rgb(255, 100, 100);
-        font-size: 1.7rem;
-        font-weight: 500;
-      }
+  .first-case {
+    margin: 20px 0;
 
-      p {
-        padding: 5px 0 20px;
-        font-weight: 600;
-      }
+    h2 {
+      color: rgb(255, 100, 100);
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
 
-      ul {
-        display: flex;
+    p {
+      padding: 5px 0 20px;
+      font-weight: 600;
+    }
 
-        display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    gap: 10px;  
-      }
-
-      li {
-        font-size: 0.8rem;
-        color: white;
-        background-color: rgb(255, 100, 100);
-        padding: 5px 10px;
-        margin-right: 10px;
-        border-radius: 10px;
-
+    ul {
+      display: flex;
        
+    }
+
+    li {
+      font-size: 0.8rem;
+      color: white;
+      background-color: rgb(255, 100, 100);
+      padding: 5px 10px;
+      margin-right: 10px;
+      border-radius: 10px;
+      text-align: center;
+
       border-radius: 10px;
       padding: 4px 40px;
       display: flex;
@@ -60,64 +55,76 @@
       font-size: 14px;
       font-weight: 700;
 
-      @media (max-width: 769px){
+      @media (max-width: 769px) {
         font-size: 10px;
       }
     }
   }
 
-    .second-case {
-      margin: 20px 0 0;
-      display: block;
+  .second-case {
+    margin: 20px 0 0;
+    display: flex;
+    flex-direction: column-reverse; // Alignement en colonne
+    align-items: flex-end; // Aligne les éléments à droite
+    gap: 20px; // Espacement entre host et rating
 
-      @media screen and (max-width: 769px) {
+    .host {
+      display: flex;
+      align-items: center;
+
+      p {
+        color: rgb(255, 100, 100);
+      }
+
+      .host-image {
+        border-radius: 50%;
+        width: 70px;
+        margin: 0 0 15px 10px;
+      }
+
+      .headinfos {
         display: flex;
-        justify-content: center;
+        flex-direction: column; // Assure que le nom du host est sous la photo
+      }
+    }
+
+    .rate {
+      .rating {
+        display: flex;
         align-items: center;
-      }
 
-      .host {
-        p {
-          color: rgb(255, 100, 100);
-        }
-
-        .host-image {
-          border-radius: 50%;
-          width: 70px;
-          margin: 0 0 15px 10px;
-        }
-
-        .headinfos {
-          display: flex;
-          align-items: center;
-        }
-      }
-
-      .rate {
-        .rating {
-          display: flex; 
-          align-items: center; 
-      
         img {
-          width: 25px; 
+          width: 25px;
           margin-left: 10px;
         }
-         
       }
-      
     }
   }
 
-   .col-container{
-     
+  .col-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
-  
-    @media (max-width:1024px){
+    margin-top: 20px; // Ajoute une marge en haut
+
+    @media (max-width: 1024px) {
       grid-template-columns: 1fr;
     }
   }
-}
 
+  @media (max-width: 769px) {
+    .first-case {
+      width: calc(83% - 20px); // Largeur du titre alignée avec le carrousel
+      margin-left: 20px;
+    }
+
+    .second-case {
+      display: flex;
+      flex-direction: row;
+      align-items: center; // Centre les éléments en colonne
+      gap: 10px; // Espacement entre host et rating
+      justify-content: space-between;
+      margin-right: 20px;
+    }
+  }
 }
