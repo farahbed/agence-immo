@@ -38,8 +38,8 @@
 
     ul {
       display: flex;
-      flex-wrap: nowrap; /* Ajouté pour permettre un retour à la ligne */
-      gap: 10px; /* Espacement entre les éléments */
+      flex-wrap: nowrap; 
+      gap: 10px; 
       margin-top: 10px;
 
       @media (max-width: 769px) {
@@ -62,22 +62,22 @@
 
       @media (max-width: 769px) {
         font-size: 10px;
-        padding: 4px 20px; /* Réduire le padding pour le responsive */
-        margin-right: 10px; /* S'assure que les éléments ne se touchent pas */
+        padding: 4px 30px; 
+        margin-right: 10px; 
         width: calc(20% - 45px);
         justify-content: center;
         align-items: center;
         
       }
     }
-  } /* Il manquait cette accolade fermante ici */
+  } 
 
   .second-case {
     margin: 20px 30px;
     display: flex;
-    flex-direction: column-reverse; // Alignement en colonne
-    align-items: flex-end; // Aligne les éléments à droite
-    gap: 20px; // Espacement entre host et rating
+    flex-direction: column-reverse; 
+    align-items: flex-end; 
+    gap: 20px; 
 
     @media (max-width: 769px) {
       flex-direction: row;
