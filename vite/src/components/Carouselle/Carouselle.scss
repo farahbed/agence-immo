@@ -38,11 +38,11 @@
   }
   
   .left-arrow {
-    left: 10px; /* Ajustez la position de la flèche gauche */
+    left: 10px; 
   }
 
   .right-arrow {
-    right: 10px; /* Ajustez la position de la flèche droite */
+    right: 10px; 
   }
 }
 
@@ -53,8 +53,10 @@
   }
 
   .arrow img {
-    width: 28px !important;  /* Réduction de la taille des flèches en responsive */
+    width: 28px !important;  
     height: 33px !important;
   }
+  .image-number {
+    display: none;
+  }
 }
-
