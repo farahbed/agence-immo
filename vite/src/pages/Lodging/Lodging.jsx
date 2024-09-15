@@ -9,12 +9,12 @@ import Equipement from '../../components/Equipement/Equipement.jsx';
 
 
 function Lodging () {
-    const { id } = useParams();
+    const { id } = useParams(); {/* Récupère l'ID dans l'URL */}
 
     console.log('ID from useParams',id);
     
     // Find the lodging item based on the id
-    const lodging = backData.find((lodging) => lodging.id === id);
+    const lodging = backData.find((lodging) => lodging.id === id); {/* Recherche le logement correspondant à l'ID */}
 
     // Handle case where lodging is not found
     if (!lodging) {
@@ -25,14 +25,14 @@ function Lodging () {
          host,
           rating,
           location,
-        tags,} = lodging;
+        tags,} = lodging;  // Récupère les informations du logement correspondant à l'ID
 
     return (
  <div className="lodging-page">
-            {/* Pass the pictures array to Carouselle */}
+            
             <Carouselle images={pictures} />{" "}
 
-            {/* Display other lodging details */}
+           
             
     <div className="all-infos">
         <div className="first-case">
@@ -42,7 +42,7 @@ function Lodging () {
                 </div>
             <div>
                 <ul>
-                    {tags.map((tag, index) => (
+                    {tags.map((tag, index) => ( // Affiche les tags dans une liste
                     <li key={index}>{tag}</li>
                  ))}
                 </ul>

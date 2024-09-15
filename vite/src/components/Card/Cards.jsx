@@ -3,7 +3,7 @@ import './Cards.scss'
 
 
 
-function Cards({ title, cover}) {
+function Cards({ title, cover}) { {/* props title et cover */}
  
   return (
 <div className="card"> 

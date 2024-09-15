@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/lodging/:id" element={<Lodging />} />
+          <Route path="/lodging/:id" element={<Lodging />} /> {/*page dynamique pour afficher les informations d'un logement */}
           <Route path="*" element={<Error />} />
         </Routes>
      </main>

@@ -3,19 +3,19 @@ import '../../styles/Collapse.scss';
 import arrowIcon from './arrow.png'; 
 
 function Collapse({ title, content }) {
-  const [Open, setOpen] = useState(false);
-  const contentRef = useRef(null);
+  const [Open, setOpen] = useState(false); {/* Indique si la collapse est ouverte ou non */}
+  const contentRef = useRef(null); {/* Représente le contenu de la collapse */}
 
-  // Fonction pour gérer le clic sur un titre
-  const toggleCollapse = () => {
-    setOpen(!Open);
+  
+  const toggleCollapse = () => {   
+    setOpen(!Open); {/* Ouvrir ou fermer la collapse */}
   };
 
   useEffect(() => {
     if (Open) {
-      contentRef.current.style.maxHeight = contentRef.current.scrollHeight + 'px';
+      contentRef.current.style.maxHeight = contentRef.current.scrollHeight + 'px'; {/* hauteur maximale de la collapse */}
     } else {
-      contentRef.current.style.maxHeight = '0px';
+      contentRef.current.style.maxHeight = '0px'; {/* hauteur minimale de la collapse */}
     }
   }, [Open]);
 
@@ -25,16 +25,16 @@ function Collapse({ title, content }) {
       <h3>{title}</h3>
         <img
           src={arrowIcon}
-          alt="arrow"
+          alt="arrow" 
           className={`collapse-arrow ${Open ? "open" : ""}`}
           style={{
             transform: `rotate(${Open ? "180deg" : "0"})`,
-            transition: "transform 0.2s ease",
-          }}
+            transition: "transform 0.2s ease", 
+          }}         
         />
       </div>
       <div
-        className={`collapse-content ${Open ? "open" : ""}`}
+        className={`collapse-content ${Open ? "open" : ""}`} // Afficher ou masquer le contenu de la collapse en fonction de l'ouverture de la collapse 
         ref={contentRef}
       >
         <ul>{content}</ul>
